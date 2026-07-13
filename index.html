@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
+<title>تنظيف وعزل خزانات المياه | جدة ومكة</title>
+<meta name="description" content="خدمة تنظيف وعزل خزانات المياه في جدة ومكة - غسيل، تعقيم، عزل، وكشف تسربات. اتصل الآن 0565513296">
+<style>
+  :root{
+    --deep:#053e52;
+    --teal:#0e8f9c;
+    --aqua:#22c1d4;
+    --light-aqua:#e6fbff;
+    --gold:#f0b429;
+    --whatsapp:#25d366;
+    --call:#0a6cff;
+    --text:#0b2f38;
+  }
+
+  *{margin:0;padding:0;box-sizing:border-box;}
+
+  html,body{
+    font-family:'Tahoma','Segoe UI',Arial,sans-serif;
+    background:linear-gradient(160deg,var(--deep) 0%, var(--teal) 45%, var(--aqua) 100%);
+    min-height:100vh;
+    color:var(--text);
+    direction:rtl;
+    overflow-x:hidden;
+  }
+
+  body{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:24px 12px 90px;
+    position:relative;
+  }
+
+  /* decorative water bubbles */
+  .bubble{
+    position:fixed;
+    border-radius:50%;
+    background:radial-gradient(circle at 30% 30%, rgba(255,255,255,0.55), rgba(255,255,255,0.05));
+    pointer-events:none;
+    animation:float 9s ease-in-out infinite;
+    z-index:0;
+  }
+  .bubble.b1{width:120px;height:120px;top:6%;left:-40px;animation-duration:11s;}
+  .bubble.b2{width:70px;height:70px;top:70%;left:-20px;animation-duration:8s;animation-delay:1s;}
+  .bubble.b3{width:90px;height:90px;top:15%;right:-30px;animation-duration:10s;animation-delay:2s;}
+  .bubble.b4{width:50px;height:50px;top:80%;right:10%;animation-duration:7s;animation-delay:0.5s;}
+
+  @keyframes float{
+    0%,100%{transform:translateY(0) translateX(0);}
+    50%{transform:translateY(-25px) translateX(10px);}
+  }
+
+  .card{
+    position:relative;
+    z-index:2;
+    width:100%;
+    max-width:430px;
+    background:#ffffff;
+    border-radius:28px;
+    overflow:hidden;
+    box-shadow:0 25px 60px rgba(0,0,0,0.35);
+    animation:riseIn .8s ease both;
+  }
+
+  @keyframes riseIn{
+    from{opacity:0;transform:translateY(40px) scale(.97);}
+    to{opacity:1;transform:translateY(0) scale(1);}
+  }
+
+  .card-header{
+    background:linear-gradient(135deg,var(--deep), var(--teal) 60%, var(--aqua));
+    color:#fff;
+    padding:30px 22px 26px;
+    text-align:center;
+    position:relative;
+  }
+
+  .card-header::after{
+    content:"";
+    position:absolute;
+    bottom:-1px;left:0;right:0;
+    height:26px;
+    background:#fff;
+    border-radius:60% 60% 0 0 / 100% 100% 0 0;
+  }
+
+  .badge{
+    display:inline-block;
+    background:rgba(255,255,255,0.18);
+    border:1px solid rgba(255,255,255,0.4);
+    padding:6px 16px;
+    border-radius:999px;
+    font-size:13px;
+    margin-bottom:14px;
+    letter-spacing:.5px;
+  }
+
+  .icon-tank{
+    width:64px;height:64px;
+    margin:0 auto 10px;
+    display:flex;align-items:center;justify-content:center;
+    background:rgba(255,255,255,0.15);
+    border-radius:18px;
+    font-size:34px;
+  }
+
+  .card-header h1{
+    font-size:24px;
+    font-weight:800;
+    line-height:1.5;
+    margin-bottom:8px;
+    text-shadow:0 2px 8px rgba(0,0,0,0.25);
+  }
+
+  .city-row{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
+    font-size:15px;
+    font-weight:600;
+    opacity:.95;
+  }
+
+  .card-body{
+    padding:26px 22px 10px;
+  }
+
+  .price-box{
+    background:linear-gradient(135deg,#fff7e6,#ffedbf);
+    border:2px dashed var(--gold);
+    border-radius:18px;
+    padding:16px;
+    text-align:center;
+    margin-bottom:22px;
+    position:relative;
+  }
+
+  .price-box .label{
+    font-size:13px;
+    color:#8a6400;
+    font-weight:700;
+    margin-bottom:4px;
+  }
+
+  .price-box .price{
+    font-size:26px;
+    font-weight:900;
+    color:#7a4c00;
+  }
+
+  .price-box .note{
+    font-size:12px;
+    color:#8a6400;
+    margin-top:4px;
+  }
+
+  .section-title{
+    display:flex;
+    align-items:center;
+    gap:8px;
+    font-size:16px;
+    font-weight:800;
+    color:var(--deep);
+    margin-bottom:12px;
+  }
+
+  .section-title .dot{
+    width:10px;height:10px;
+    border-radius:50%;
+    background:var(--aqua);
+    box-shadow:0 0 0 4px rgba(34,193,212,0.2);
+  }
+
+  .services-list{
+    list-style:none;
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+    margin-bottom:24px;
+  }
+
+  .services-list li{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    background:var(--light-aqua);
+    border-radius:14px;
+    padding:12px 14px;
+    font-size:14.5px;
+    font-weight:600;
+    color:var(--text);
+    transition:transform .2s ease;
+  }
+  .services-list li:hover{transform:translateX(-4px);}
+
+  .services-list li .ico{
+    flex:0 0 30px;
+    width:30px;height:30px;
+    border-radius:9px;
+    background:linear-gradient(135deg,var(--teal),var(--aqua));
+    color:#fff;
+    display:flex;align-items:center;justify-content:center;
+    font-size:15px;
+  }
+
+  .features{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:10px;
+    margin-bottom:26px;
+  }
+
+  .feature{
+    background:#fff;
+    border:1.5px solid #e3f4f6;
+    border-radius:14px;
+    padding:12px 10px;
+    text-align:center;
+    font-size:12.5px;
+    font-weight:700;
+    color:var(--deep);
+    box-shadow:0 4px 12px rgba(14,143,156,0.08);
+  }
+
+  .feature .femoji{
+    font-size:20px;
+    display:block;
+    margin-bottom:4px;
+  }
+
+  .cta-wrap{
+    display:flex;
+    gap:10px;
+    padding:4px 22px 24px;
+  }
+
+  .cta-btn{
+    flex:1;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
+    padding:14px 10px;
+    border-radius:16px;
+    font-size:15px;
+    font-weight:800;
+    text-decoration:none;
+    color:#fff;
+    transition:transform .15s ease, box-shadow .15s ease;
+  }
+
+  .cta-btn:active{transform:scale(.96);}
+
+  .btn-call{
+    background:linear-gradient(135deg,var(--call),#3d8bff);
+    box-shadow:0 10px 20px rgba(10,108,255,0.35);
+  }
+
+  .btn-wa{
+    background:linear-gradient(135deg,var(--whatsapp),#1ebe57);
+    box-shadow:0 10px 20px rgba(37,211,102,0.35);
+  }
+
+  .phone-display{
+    text-align:center;
+    font-size:20px;
+    font-weight:900;
+    letter-spacing:1px;
+    color:var(--deep);
+    background:var(--light-aqua);
+    border-radius:14px;
+    padding:10px;
+    margin:0 22px 18px;
+    direction:ltr;
+  }
+
+  .footer{
+    text-align:center;
+    font-size:11.5px;
+    color:#7a8f93;
+    padding:14px 16px 20px;
+    border-top:1px solid #eef7f8;
+  }
+
+  .designer-credit{
+    margin-top:6px;
+    font-size:12px;
+    font-weight:700;
+  }
+
+  .designer-credit a{
+    color:var(--whatsapp);
+    text-decoration:none;
+    font-weight:900;
+  }
+  .designer-credit a:hover{text-decoration:underline;}
+
+  /* floating side buttons */
+  .float-buttons{
+    position:fixed;
+    left:16px;
+    bottom:22px;
+    display:flex;
+    flex-direction:column;
+    gap:14px;
+    z-index:50;
+  }
+
+  .float-btn{
+    width:58px;height:58px;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:#fff;
+    font-size:26px;
+    text-decoration:none;
+    box-shadow:0 8px 20px rgba(0,0,0,0.3);
+    animation:pulse 2.4s ease-in-out infinite;
+  }
+
+  .float-btn.wa{background:radial-gradient(circle at 35% 30%, #35e07a, var(--whatsapp));animation-delay:0s;}
+  .float-btn.call{background:radial-gradient(circle at 35% 30%, #4d9bff, var(--call));animation-delay:.3s;}
+
+  @keyframes pulse{
+    0%,100%{box-shadow:0 8px 20px rgba(0,0,0,0.3), 0 0 0 0 rgba(255,255,255,0.4);}
+    50%{box-shadow:0 8px 20px rgba(0,0,0,0.3), 0 0 0 10px rgba(255,255,255,0);}
+  }
+
+  @media (max-width:380px){
+    .card-header h1{font-size:21px;}
+    .features{grid-template-columns:1fr 1fr;}
+  }
+</style>
+</head>
+<!-- TikTok Pixel Code Start -->
+<script>
+!function (w, d, t) {
+  w.TiktokAnalyticsObject=t;var ttq=w[t]=w[t]||[];ttq.methods=["page","track","identify","instances","debug","on","off","once","ready","alias","group","enableCookie","disableCookie","holdConsent","revokeConsent","grantConsent"],ttq.setAndDefer=function(t,e){t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}};for(var i=0;i<ttq.methods.length;i++)ttq.setAndDefer(ttq,ttq.methods[i]);ttq.instance=function(t){for(
+var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n]);return e},ttq.load=function(e,n){var r="https://analytics.tiktok.com/i18n/pixel/events.js",o=n&&n.partner;ttq._i=ttq._i||{},ttq._i[e]=[],ttq._i[e]._u=r,ttq._t=ttq._t||{},ttq._t[e]=+new Date,ttq._o=ttq._o||{},ttq._o[e]=n||{};n=document.createElement("script")
+;n.type="text/javascript",n.async=!0,n.src=r+"?sdkid="+e+"&lib="+t;e=document.getElementsByTagName("script")[0];e.parentNode.insertBefore(n,e)};
+
+
+  ttq.load('D7LNKEJC77U6PFPAGR4G');
+  ttq.page();
+}(window, document, 'ttq');
+</script>
+<!-- TikTok Pixel Code End -->
+<body>
+
+  <div class="bubble b1"></div>
+  <div class="bubble b2"></div>
+  <div class="bubble b3"></div>
+  <div class="bubble b4"></div>
+
+  <div class="card" id="card">
+    <div class="card-header">
+      <span class="badge">خدمة موثوقة ⭐ سريعة ونظيفة</span>
+      <div class="icon-tank">🚰</div>
+      <h1>تنظيف وعزل خزانات المياه</h1>
+      <div class="city-row">📍 جدة &nbsp;-&nbsp; مكة المكرمة</div>
+    </div>
+
+    <div class="card-body">
+
+      <div class="price-box">
+        <div class="label">عرض خاص لفترة محدودة</div>
+        <div class="price">أسعار تبدأ من حسب حجم الخزان</div>
+        <div class="note">اتصل الآن لمعرفة السعر المناسب لخزانك</div>
+      </div>
+
+      <div class="section-title"><span class="dot"></span> خدماتنا</div>
+      <ul class="services-list">
+        <li><span class="ico">🧽</span> غسيل وتنظيف خزانات المياه من الداخل</li>
+        <li><span class="ico">🦠</span> تعقيم وتطهير الخزانات بمواد آمنة</li>
+        <li><span class="ico">🛡️</span> عزل الخزانات الخرسانية والفايبر</li>
+        <li><span class="ico">🔍</span> كشف تسربات المياه بأحدث الأجهزة</li>
+        <li><span class="ico">🧰</span> صيانة وإصلاح الخزانات</li>
+      </ul>
+
+      <div class="section-title"><span class="dot"></span> مميزاتنا</div>
+      <div class="features">
+        <div class="feature"><span class="femoji">⚡</span> سرعة في التنفيذ</div>
+        <div class="feature"><span class="femoji">🧑‍🔧</span> فنيون محترفون</div>
+        <div class="feature"><span class="femoji">✅</span> ضمان على الخدمة</div>
+        <div class="feature"><span class="femoji">💧</span> مواد تعقيم آمنة</div>
+        <div class="feature"><span class="femoji">🕐</span> خدمة على مدار الساعة</div>
+        <div class="feature"><span class="femoji">💰</span> أسعار مناسبة</div>
+      </div>
+
+    </div>
+
+    <div class="phone-display" dir="ltr">📞 0565513296</div>
+
+    <div class="cta-wrap">
+      <a class="cta-btn btn-call" href="tel:0565513296">📞 اتصال الآن</a>
+      <a class="cta-btn btn-wa" href="https://wa.me/966565513296" target="_blank" rel="noopener">💬 واتساب</a>
+    </div>
+
+    <div class="footer">
+      جميع الحقوق محفوظة © <span id="year"></span>
+      <div class="designer-credit">
+        تم التصميم بواسطة م. نجوى ابراهيم —
+        <a href="https://wa.me/201029095046" target="_blank" rel="noopener">+20 10 29095046</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="float-buttons">
+    <a class="float-btn wa" href="https://wa.me/966565513296" target="_blank" rel="noopener" aria-label="واتساب">💬</a>
+    <a class="float-btn call" href="tel:0565513296" aria-label="اتصال">📞</a>
+  </div>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // subtle entrance animation retrigger for card children
+  document.addEventListener('DOMContentLoaded', function () {
+    var items = document.querySelectorAll('.services-list li, .feature');
+    items.forEach(function (el, i) {
+      el.style.opacity = 0;
+      el.style.transform = 'translateY(10px)';
+      setTimeout(function () {
+        el.style.transition = 'all .45s ease';
+        el.style.opacity = 1;
+        el.style.transform = 'translateY(0)';
+      }, 150 + i * 60);
+    });
+  });
+</script>
+
+</body>
+</html>
